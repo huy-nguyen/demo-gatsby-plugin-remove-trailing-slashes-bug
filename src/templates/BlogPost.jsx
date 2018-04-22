@@ -13,6 +13,7 @@ export default class extends React.Component {
         return (
           <div>
             <h1> {data.markdownRemark.frontmatter.title}</h1>
+            <div>{data.markdownRemark.fields.summary}</div>
             <div dangerouslySetInnerHTML={{__html: data.markdownRemark.html}}/>
           </div>
         )
@@ -33,6 +34,7 @@ export const query = graphql`
       html
       fields {
         slug
+        summary
       }
       frontmatter {
         title

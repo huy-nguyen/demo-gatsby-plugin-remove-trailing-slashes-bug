@@ -14,10 +14,16 @@ exports.onCreateNode = ({node, getNode, boundActionCreators}) => {
   if (node.internal.type === 'MarkdownRemark') {
     const basePath = node.fileAbsolutePath;
     const slug = createFilePath({node, getNode, basePath});
+    const summary = node.frontmatter.summary;
     createNodeField({
       node,
       name: 'slug',
       value: slug,
+    })
+    createNodeField({
+      node,
+      name: 'summary',
+      value: summary,
     })
   }
 }
