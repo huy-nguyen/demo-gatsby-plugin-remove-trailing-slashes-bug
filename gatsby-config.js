@@ -3,6 +3,7 @@ module.exports = {
     title: 'Gatsby Default Starter',
   },
   plugins: [
+    'gatsby-plugin-remove-trailing-slashes',
     {
       resolve: 'gatsby-transformer-remark',
     },
